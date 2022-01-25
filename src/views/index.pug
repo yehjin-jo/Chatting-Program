@@ -1,0 +1,33 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Mint Talk
+        link(rel = "stylesheet", href = "public/css/chat.css")
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    body
+        #welcome
+            h1 Mint Talk
+            form#join
+                input#nickName(
+                    placeholder = "Nickname"
+                    required
+                    type="text"
+                )
+                input#roomName(placeholder = "Room name", required, type="text")
+                button(type = "submit") Enter
+            h3
+        #main
+            h1#returnHome Mint Talk
+            #currentRoom
+                .chatroom-container
+                    .chatroom-item
+                        h3
+                    #messageList.chatroom-item
+                    .chatroom-item
+                            form#message
+                                textarea(required, type="text")
+                                button(type="submit") Send
+    script(src="/socket.io/socket.io.js")
+    script(src="/public/js/app.js")
